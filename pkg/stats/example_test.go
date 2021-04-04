@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"github.com/Ulugbek999/bank1/v2/pkg/types"
+	"github.com/Ulugbek999/bank1/pkg/types"
 	
 	
 	"fmt"
@@ -12,32 +12,30 @@ import (
 
 
 
+
 func ExampleAvg() {
 	payments := []types.Payment{
 		{
 			ID:       1,
 			Amount:   53_00,
-			Category: "Toys",
-			Status:   types.StatusOk,
+			Category: "store",
 		},
 		{
 			ID:       2,
 			Amount:   51_00,
-			Category: "Toys",
-			Status:   types.StatusOk,
+			Category: "store",
 		},
 		{
 			ID:       3,
 			Amount:   52_00,
-			Category: "Toys",
-			Status:   types.StatusFail,
+			Category: "store",
 		},
 	}
 
 	fmt.Println(Avg(payments))
 
 	//Output: 5200
-}
+} 
 
 
 func ExampleTotalInCategory() {
@@ -46,25 +44,22 @@ func ExampleTotalInCategory() {
 			ID:       1,
 			Amount:   10_000_00,
 			Category: "auto",
-			Status:   types.StatusOk,
 		},
 		{
 			ID:       2,
 			Amount:   20_000_00,
 			Category: "pharmacy",
-			Status:   types.StatusOk,
 		},
 		{
 			ID:       3,
 			Amount:   30_000_00,
 			Category: "restaurant",
-			Status:   types.StatusFail,
 		},
 	}
 
 	inCategory := types.Category("auto")
 	totalInCategory := TotalInCategory(payments, inCategory)
 	fmt.Println(totalInCategory)
-	//Output:  1000000
+	//Output: 1000000
 
-}
+} 
